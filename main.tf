@@ -26,6 +26,7 @@ resource "aws_db_subnet_group" "main" {
 resource "aws_security_group" "main" {
   name        = "${var.env}-rds-sg"
   description = "${var.env}-rds-sg"
+  vpc_id      = var.vpc_id
 
   ingress {
     from_port   = 3306
